@@ -1,0 +1,15 @@
+<table style="border-collapse: separate; border: 1px solid black;">
+    <thead>
+        <th>Text cell</th>
+        <th>Number Cell</th>
+        <th>Boolean Cell</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tableRowData of tableData">
+            <td *ngFor="let tableCellData of tableRowData; let i = index">
+                <!-- {{tableCellData | json}} -->
+                <app-dynamic-table-cell-wrapper [cellData]="tableCellData" [cellConfig]="tableConfig.contentConfig.rowConfig.cellConfigs[i]"></app-dynamic-table-cell-wrapper>
+            </td>
+        </tr>
+    </tbody>
+</table>
